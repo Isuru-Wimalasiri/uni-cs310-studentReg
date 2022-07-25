@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Registration - Faculty of Science</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav>
+                <img src="https://www.pdn.ac.lk/about/university/siteimages/crest.png" alt="Logo"/>
+                Student Registration - FOS
+        </nav>
+
+        <div class="container">
+            <div id="wrapper">
+                <div class="forms">
+                    <div class="personalDetails">
+                        <form  name="personalDataForm" method="post">
+                            <label for="name">Name with initials</label> <br>
+                            <input type="text" name="name" id="name" placeholder="W.A.I.M. Wimalasiri" onchange="eraseErr(0)">
+                            <p class="errorMessage" id="nameErr"></p>
+
+                            <label for="gender">Gender</label> <br>
+                            <input class="genderSelect" type="radio" name="gender" value="male" id="male" onchange="eraseErr(1)"> <label class="genLabel" for="male">Male</label>
+                            <input class="genderSelect" type="radio" name="gender" value="Female" id="female" onchange="eraseErr(1)"> <label class="genLabel" for="female">Female</label>
+                            <input class="genderSelect" type="radio" name="gender" value="Other" id="other" onchange="eraseErr(1)"> <label class="genLabel" for="other">Other</label>
+                            <p class="errorMessage" id="genErr"></p>
+
+                            <label for="dob">Date of Birth</label> <br>
+                            <input type="date" id="dob" onchange="eraseErr(2)">
+                            <p class="errorMessage" id="dobErr"></p>
+
+                            <label for="nic">NIC number</label> <br>
+                            <input type="text" name="nic" id="nic" placeholder="199712303232" onchange="eraseErr(3)">
+                            <p class="errorMessage" id="nicErr"></p>
+
+                            <label for="address">Address</label> <br>
+                            <input type="text" name="address" id="address" placeholder="11/1, Peradeniya, Kandy." onchange="eraseErr(4)">
+                            <p class="errorMessage" id="addErr"></p>
+
+                            <label for="phone">Telephone Number</label> <br>
+                            <input type="text" placeholder="0112677677" name="phone" id="phone" onchange="eraseErr(5)">
+                            <p class="errorMessage" id="phoErr"></p>
+
+                            <label for="zScore">Z-Score</label> <br>
+                            <input type="text" placeholder="1.5434" id="zScore" name="zScore" onchange="eraseErr(6)">
+                            <p class="errorMessage" id="zErr"></p>
+                        </form>
+                    </div>
+                    <div id="bder"></div>
+                    <div class="courseDetails">
+                        <form name="courseDataForm" id="courseForm">
+                            <label for="courses">Course</label><br>
+                            <select id="courses" name="courses" onchange="showCombinations(this)">
+                                <option  selected hidden>-Select-</option>
+                                <option value="phy">Physical Science</option>
+                                <option value="bio">Bio Science</option>
+                                <option value="sor">SOR</option>
+                                <option value="cm">CM</option>
+                            </select>
+                            <p class="errorMessage" id="selErr"></p>
+
+                            <div id="combinations" hidden>
+                                <div id="combinationhead">
+                                    <label> <u>Select five combinations you like</u></label> <br>  
+                                </div>
+                                <label class="prefer" for="firstPrefer">First preference</label> <br>
+                                <select name="firstPrefer" id="firstPrefer" onchange="eraseErr(8)">
+                                </select>
+                                <p class="errorMessage" id="firErr"></p>
+
+                                <label class="prefer" for="secondPrefer">Second preference</label> <br>
+                                <select name="secondPrefer" id="secondPrefer" onchange="eraseErr(9)">
+                                </select>
+                                <p class="errorMessage" id="secErr"></p>
+
+                                <label class="prefer" for="thirdPrefer">Third preference</label> <br>
+                                <select name="thirdPrefer" id="thirdPrefer" onchange="eraseErr(10)">
+                                </select>
+                                <p class="errorMessage" id="thiErr"></p>
+
+                                <label class="prefer" for="fourthPrefer">Fourth preference</label> <br>
+                                <select name="fourthPrefer" id="fourthPrefer" onchange="eraseErr(11)">
+                                </select>
+                                <p class="errorMessage" id="fouErr"></p>
+
+                                <label class="prefer" for="fifthPrefer">Fifth preference</label> <br>
+                                <select name="fifthPrefer" id="fifthPrefer" onchange="eraseErr(12)">
+                                </select>
+                                <p class="errorMessage" id="fifErr"></p>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <button id="submitBtn" >Submit</button>
+                </div>
+            </div>
+            <div id="status" >
+                    <h1>Successfully Registered!</h1>   
+            </div>
+            <footer>
+
+            </footer>
+        </div>
+        
+
+        <script src="app.js"></script>
+    </body>
+</html>
